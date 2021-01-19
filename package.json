@@ -16,7 +16,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "dev": "react-scripts start",
+    "dev1": "react-scripts start",
+    "dev": "concurrently \"nodemon server.js\" \"npm run dev1\"",
     "start": "nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",

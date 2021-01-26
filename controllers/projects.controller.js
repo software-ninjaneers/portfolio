@@ -20,23 +20,32 @@ exports.index = function (req, res) {
 
 // Handle create project actions
 exports.new = function (req, res) {
-	console.log(req.body);
-	var project = new Project();
-	project.title = req.body.title;
-	project.position = req.body.position;
-	project.desc = req.body.desc;
-	project.techStack = req.body.techStack;
-	project.otherTech = req.body.otherTech;
-	project.time = req.body.time;
-	project.challenges = req.body.challenges;
-	project.numberOfTeamMember = req.body.numberOfTeamMember;
-	// save the project and check for errors
-	project.save(function (err) {
-		if (err) res.json(err);
-		res.json({
-			message: "New project created!",
-			data: project,
-		});
+	var body = req.body;
+	Project.findOne({ title: body.title }, (err, project) => {
+		if (project) {
+			res.json({
+				status: "Project Title already in use",
+				message: project,
+			});
+		} else if (!project) {
+			var project = new Project();
+			project.title = req.body.title;
+			project.position = req.body.position;
+			project.desc = req.body.desc;
+			project.techStack = req.body.techStack;
+			project.otherTech = req.body.otherTech;
+			project.time = req.body.time;
+			project.challenges = req.body.challenges;
+			project.numberOfTeamMember = req.body.numberOfTeamMember;
+			// save the project and check for errors
+			project.save(function (err) {
+				if (err) res.json(err);
+				res.json({
+					message: "New project created!",
+					data: project,
+				});
+			});
+		}
 	});
 };
 

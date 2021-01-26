@@ -13,9 +13,11 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(express.urlencoded());
 
 let projectApis = require("./api-routes/projects.route");
+let contactApis = require("./api-routes/contactUs.route");
 
 // Use Api routes in the App
 app.use("/projectsApi", projectApis);
+app.use("/contactUsApi", contactApis);
 
 const port = process.env.PORT || 3001;
 

@@ -1,9 +1,9 @@
 // Import contact model
-project = require("../models/projects.model");
+Project = require("../models/projects.model");
 
 // Handle index actions
 exports.index = function (req, res) {
-	project.get(function (err, projects) {
+	Project.get(function (err, projects) {
 		if (err) {
 			res.json({
 				status: "error",
@@ -20,8 +20,9 @@ exports.index = function (req, res) {
 
 // Handle create project actions
 exports.new = function (req, res) {
+	console.log(req.body);
 	var project = new Project();
-	project.title = req.body.title ? req.body.title : project.title;
+	project.title = req.body.title;
 	project.position = req.body.position;
 	project.desc = req.body.desc;
 	project.techStack = req.body.techStack;
@@ -31,8 +32,7 @@ exports.new = function (req, res) {
 	project.numberOfTeamMember = req.body.numberOfTeamMember;
 	// save the project and check for errors
 	project.save(function (err) {
-		// if (err)
-		//     res.json(err);
+		if (err) res.json(err);
 		res.json({
 			message: "New project created!",
 			data: project,
@@ -53,9 +53,10 @@ exports.view = function (req, res) {
 
 // Handle update project info
 exports.update = function (req, res) {
+	console.log(req.body);
 	Project.findById(req.params.project_id, function (err, project) {
 		if (err) res.send(err);
-		project.title = req.body.title ? req.body.title : project.title;
+		project.title = req.body.title;
 		project.position = req.body.position;
 		project.desc = req.body.desc;
 		project.techStack = req.body.techStack;

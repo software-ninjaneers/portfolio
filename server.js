@@ -9,7 +9,7 @@ let projectApis = require("./api-routes/projects.route");
 const app = express();
 
 // Use Api routes in the App
-app.use("/projects", projectApis);
+app.use("/projectsApi", projectApis);
 
 const port = process.env.PORT || 3001;
 

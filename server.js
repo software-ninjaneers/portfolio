@@ -1,5 +1,6 @@
 // Import express
 const express = require("express");
+require("dotenv").config();
 var cors = require("cors");
 
 //import Database
@@ -28,5 +29,6 @@ app.get("/", (req, res) => {
 
 // Launch app to listen to specified port
 app.listen(port, () => {
+	console.log(process.env.GMAIL);
 	console.log(`Server listening at http://localhost:${port}`);
 });

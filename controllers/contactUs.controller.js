@@ -20,7 +20,6 @@ exports.index = function (req, res) {
 
 // Handle create contact actions
 exports.new = function (req, res) {
-	// console.log(req.body);
 	ContactUs.findOne({ email: req.body.email }, (err, email) => {
 		console.log("email", email);
 		if (email) {

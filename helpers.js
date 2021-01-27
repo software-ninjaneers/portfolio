@@ -1,6 +1,7 @@
 const nodemailer = require("nodemailer");
 
-export default sendEmail = (object) => {
+const sendEmail = (contactObject) => {
+	console.log(contactObject);
 	const transporter = nodemailer.createTransport({
 		service: "gmail",
 		auth: {
@@ -11,9 +12,9 @@ export default sendEmail = (object) => {
 
 	const mailOptions = {
 		from: "Seif.Miehiar@gmail.com",
-		to: "bazadough1997@gmail.com",
-		subject: "Testing subject",
-		text: "First text of the first test of nodemailer.",
+		to: contactObject.email,
+		subject: contactObject.subject,
+		text: contactObject.message,
 	};
 
 	transporter.sendMail(mailOptions, function (error, info) {
@@ -24,3 +25,5 @@ export default sendEmail = (object) => {
 		}
 	});
 };
+
+module.exports.sendEmail = sendEmail;

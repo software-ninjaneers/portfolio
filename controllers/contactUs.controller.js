@@ -1,5 +1,6 @@
 // Import contact model
 ContactUs = require("../models/contactUs.model");
+var { sendEmail } = require("../helpers");
 
 // Handle index actions
 exports.index = function (req, res) {
@@ -23,6 +24,7 @@ exports.new = function (req, res) {
 	ContactUs.findOne({ email: req.body.email }, (err, email) => {
 		console.log("email", email);
 		if (email) {
+			sendEmail(email);
 			res.json({
 				status: "email already exists",
 				message: err,
@@ -41,6 +43,7 @@ exports.new = function (req, res) {
 					data: contact,
 				});
 			});
+			sendEmail(contact);
 		}
 	});
 };

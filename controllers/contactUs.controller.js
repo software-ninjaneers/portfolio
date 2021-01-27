@@ -1,6 +1,6 @@
 // Import contact model
 ContactUs = require("../models/contactUs.model");
-var { sendEmail } = require("../helpers");
+var { sendEmail } = require("../helpers/sendEmail");
 
 // Handle index actions
 exports.index = function (req, res) {

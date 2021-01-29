@@ -1,5 +1,7 @@
 import LandingPage from "./landingPage";
 import ContactUs from "./contactUs";
+import Profile from "./profile";
+import Projects from "./projects";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import React from "react";
 import "../style/sideNav.css";
@@ -10,16 +12,16 @@ function SideNav() {
 			<div>
 				<div id="mySidenav" className="sidenav">
 					<Link to="/" id="about">
-						Home
+						<img src="https://img.icons8.com/metro/30/000000/home.png" />
 					</Link>
 					<Link to="/portfolio" id="blog">
-						Portfolio
+						<img src="https://img.icons8.com/ios-glyphs/30/000000/test-account.png" />
 					</Link>
 					<Link to="/projects" id="projects">
-						Projects
+						<img src="https://img.icons8.com/ios-filled/30/000000/group-of-projects.png" />{" "}
 					</Link>
 					<Link to="/contact" id="contact">
-						Contact
+						<img src="https://img.icons8.com/ios-filled/30/000000/business-contact.png" />
 					</Link>
 				</div>
 			</div>
@@ -30,6 +32,12 @@ function SideNav() {
 					</Route>
 					<Route path="/contact">
 						<ContactUs />
+					</Route>
+					<Route path="/portfolio">
+						<Profile />
+					</Route>
+					<Route path="/projects">
+						<Projects />
 					</Route>
 				</Switch>
 			</div>

@@ -11,9 +11,23 @@ function LandingPage() {
 				/> */}
 			</div>
 			<Carousel.Caption>
-				<h1 style={{ color: "orange", fontWeight: "bolder" }}>Seif Miehiar</h1>
-				<h4 style={{ color: "orange", fontWeight: "bolder" }}>
-					I'm a Full Stack Software Ninjaneer
+				<h1
+					style={{
+						color: "orange",
+						fontWeight: "bolder",
+						textShadow: "3px 3px black",
+					}}
+				>
+					Seif Miehiar
+				</h1>
+				<h4
+					style={{
+						color: "orange",
+						fontWeight: "bolder",
+						textShadow: "3px 3px black",
+					}}
+				>
+					Full Stack Software Ninjaneer
 				</h4>
 			</Carousel.Caption>
 		</div>

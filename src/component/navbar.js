@@ -1,7 +1,7 @@
 import { Navbar, Nav } from "react-bootstrap";
-import LandingPage from "./landingPage";
-import ContactUs from "./contactUs";
-import logo from "../images/SeifMiehiarLogo.jpg";
+// import LandingPage from "./landingPage";
+// import ContactUs from "./contactUs";
+// import logo from "../images/SeifMiehiarLogo.jpg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function NavbarLandingPage() {

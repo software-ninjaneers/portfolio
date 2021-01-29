@@ -1,5 +1,5 @@
 import { Carousel } from "react-bootstrap";
-import SideNav from "./sideNav";
+// import SideNav from "./sideNav";
 import "../style/landingPage.css";
 function LandingPage() {
 	return (

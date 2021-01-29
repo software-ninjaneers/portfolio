@@ -22,7 +22,7 @@ app.use("/projectsApi", projectApis);
 app.use("/contactUsApi", contactApis);
 app.use("/letterMeApi", letterMe);
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3003;
 
 // Send message for default URL
 app.get("/", (req, res) => {

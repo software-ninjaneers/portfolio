@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../style/projects.css";
+import Accordion from "react-bootstrap/Accordion";
 // import Card from "react-bootstrap/Card";
 // import { ListGroup, ListGroupItem } from "react-bootstrap/";
 
@@ -29,17 +30,27 @@ function Projects() {
 						<div key={i} className="col-sm-3 mt-5">
 							<div
 								className="card border-3 border-color #ff8c00 mb-3 "
-								style={{ maxWidth: "20rem", borderColor: "#ff8c00" }}
+								style={{
+									maxWidth: "20rem",
+									maxHeight: "100%",
+									borderColor: "#ff8c00",
+								}}
 							>
 								<div className="card-body bg-white">
 									<h5 className="card-title bg-white">{element.title}</h5>
-									<p className="card-text bg-white"> {element.position} </p>
+									<p className="card-text bg-white text-right text-muted">
+										{" "}
+										{element.position}{" "}
+									</p>
 								</div>
-								<ul
-									className="list-group list-group-flush border-color #ff8c00"
-									style={{ backgroundColor: "#ff8c00" }}
-								>
+								<ul className="list-group list-group-flush border-color #ff8c00">
 									<li className="list-group-item border-color #ff8c00 ">
+										{element.desc}
+									</li>
+									<li
+										className="list-group-item border-color #ff8c00 "
+										style={{ border: "inherit" }}
+									>
 										{iterate(element.techStack)}
 									</li>
 									<li
@@ -49,7 +60,7 @@ function Projects() {
 										{iterate(element.otherTech)}
 									</li>
 									<li className="list-group-item bg-white">
-										<ul class="list-inline bg-white">
+										<ul className="list-inline bg-white">
 											{element.challenges.map((el, j) => {
 												return (
 													<li
@@ -64,9 +75,7 @@ function Projects() {
 										</ul>
 									</li>
 								</ul>
-								<a href="#" className="btn btn-primary">
-									More Description
-								</a>
+								{/* <ProjectDesc key={i} data={element} /> */}
 								<div className="card-footer">
 									<small className="text-muted bg-white">
 										Last updated 3 mins ago

@@ -26,7 +26,7 @@ const port = process.env.PORT || 3003;
 
 // Send message for default URL
 app.get("/", (req, res) => {
-	res.send({ message: "Hello World!" });
+	res.sendFile(path.resolve(__dirname, "build", "index.html"));
 });
 
 if (process.env.NODE_ENV === "production") {

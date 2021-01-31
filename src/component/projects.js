@@ -105,7 +105,9 @@ function Projects() {
 			</div>
 		</div>
 	) : (
-		<h1> No projects</h1>
+		<div className="backgroundImg2">
+			<h1> No projects</h1>
+		</div>
 	);
 }
 

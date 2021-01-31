@@ -5,6 +5,8 @@ var cors = require("cors");
 
 //import Database
 const DB = require("./db");
+const path = require("path");
+
 // Import routes
 // Initialize the app
 const app = express();
@@ -22,7 +24,7 @@ app.use("/projectsApi", projectApis);
 app.use("/contactUsApi", contactApis);
 app.use("/letterMeApi", letterMe);
 
-const port = process.env.PORT || 3003;
+const port = process.env.PORT || 3004;
 
 // Send message for default URL
 app.get("/", (req, res) => {

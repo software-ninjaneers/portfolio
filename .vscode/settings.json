@@ -5,6 +5,7 @@
     "browserslist",
     "mlogo",
     "monospace",
+    "postbuild",
     "s"
   ]
 }

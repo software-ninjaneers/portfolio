@@ -12,16 +12,28 @@ function SideNav() {
 			<div>
 				<div id="mySidenav" className="sidenav">
 					<Link to="/" id="about">
-						<img src="https://img.icons8.com/metro/30/000000/home.png" />
+						<img
+							alt="Home"
+							src="https://img.icons8.com/metro/30/000000/home.png"
+						/>
 					</Link>
 					<Link to="/portfolio" id="blog">
-						<img src="https://img.icons8.com/ios-glyphs/30/000000/test-account.png" />
+						<img
+							alt="Profile"
+							src="https://img.icons8.com/ios-glyphs/30/000000/test-account.png"
+						/>
 					</Link>
 					<Link to="/projects" id="projects">
-						<img src="https://img.icons8.com/ios-filled/30/000000/group-of-projects.png" />{" "}
+						<img
+							alt="Projects"
+							src="https://img.icons8.com/ios-filled/30/000000/group-of-projects.png"
+						/>{" "}
 					</Link>
 					<Link to="/contact" id="contact">
-						<img src="https://img.icons8.com/ios-filled/30/000000/business-contact.png" />
+						<img
+							alt="Contact"
+							src="https://img.icons8.com/ios-filled/30/000000/business-contact.png"
+						/>
 					</Link>
 				</div>
 			</div>

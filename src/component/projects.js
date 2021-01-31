@@ -6,11 +6,16 @@ import "../style/projects.css";
 function Projects() {
 	const [projects, setProjects] = useState({ data: [] });
 
-	useEffect(async () => {
-		const result = await axios.get("/projectsApi/projects");
+	useEffect(() => {
+		async function fetchData() {
+			// You can await here
+			const response = await axios.get("/projectsApi/projects");
+			// ...
+			setProjects(response.data.data);
+		}
+		fetchData();
+	}, []); // Or [] if effect doesn't need props or state
 
-		setProjects(result.data.data);
-	});
 	const iterate = (array) => {
 		var string = "";
 		array.forEach((element, i) => {

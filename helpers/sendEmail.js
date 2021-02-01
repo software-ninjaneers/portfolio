@@ -12,8 +12,9 @@ const sendEmail = (contactObject) => {
 
 	const mailOptions = {
 		from: "Seif.Miehiar@gmail.com",
-		to: `${contactObject.email}, Seif.Miehiar@gmail.com`,
-		subject: `Seif Miehiar - `,
+		to: `${contactObject.email}`,
+		cc: "Seif.Miehiar@gmail.com",
+		subject: `Seif Miehiar - Thank you for getting in touch with me! `,
 		text: contactObject.message,
 		html: template(contactObject),
 	};
@@ -192,15 +193,16 @@ const template = (contactObject) => {
                         <br>
                           Hi ${contactObject.name} <br><br>
 
-                          this is your message to me<br>
-                          "${contactObject.message}" <br>
+                          this is your message to me<br><br>
+                          "${contactObject.message}" 
 													
-													I will contact you as soon as possible.
-                          <br>
-  
-                          <br>
-                          Thanks you!<br>
-                          Seif Miehiar
+													I will contact you as soon as possible.<br>
+
+													Thanks you!
+													<br>
+													<b>
+													Seif Miehiar
+													</b>
                         </td>
                       </tr>
                     </table>

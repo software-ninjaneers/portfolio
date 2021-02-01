@@ -21,6 +21,13 @@ exports.index = function (req, res) {
 
 // Handle create contact actions
 exports.new = function (req, res) {
+	console.log(req.body);
+	// if (!req.body.name) {
+	// 	return res.status(400).json({
+	// 		status: "error",
+	// 		error: "req body cannot be empty",
+	// 	});
+	// }
 	ContactUs.findOne({ email: req.body.email }, (err, email) => {
 		console.log("email", email);
 		if (email) {

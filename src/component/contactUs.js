@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { css } from "@emotion/core";
-import ClipLoader from "react-spinners/ClipLoader";
-import Spinner from "react-bootstrap/Spinner";
 import "../style/contactUs.css";
 
 const override = css`
@@ -14,12 +13,40 @@ const override = css`
 `;
 
 function ContactUs() {
-	let [loading, setLoading] = useState(true);
-	let [color, setColor] = useState("#ffffff");
-
 	const { register, handleSubmit, errors } = useForm();
 
-	const onSubmit = (data) => console.log(data);
+	// useEffect(() => {
+	// 	// POST request using axios inside useEffect React hook
+	// 	const formData = register;
+	// 	axios
+	// 		.post("contactUsApi/contactUs", formData)
+	// 		.then((response) => console.log(response))
+	// 		.catch((error) => {
+	// 			// this.setState({ errorMessage: error.message });
+	// 			console.error("There was an error!", error);
+	// 		});
+
+	// 	// empty dependency array means this effect will only run once (like componentDidMount in classes)
+	// }, []);
+
+	function sendData(data) {
+		console.log(data);
+		// You can await here
+		// const response = axios.post("/contactUsApi/contactUs/", register);
+		axios
+			.post("/contactUsApi/contactUs", data)
+			.then(function (response) {
+				console.log(response);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
+
+	const onSubmit = (data) => {
+		console.log(data);
+		sendData(data);
+	};
 
 	return (
 		<div className="backgroundImg3">
@@ -98,7 +125,7 @@ function ContactUs() {
 								<div className="border border-warning rounded-3">
 									<Form.Control
 										type="number"
-										name="Phone"
+										name="phoneNumber"
 										placeholder="Enter your phone number"
 										ref={register}
 										// onChange={(e) => {

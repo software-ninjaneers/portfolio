@@ -36,7 +36,7 @@ function ContactUs() {
 						<div>
 							<Form.Group controlId="formGroupName">
 								<Form.Label>Name</Form.Label>
-								<div className="border border-warning">
+								<div className="border border-warning rounded-3 ">
 									<Form.Control
 										type="text"
 										name="name"
@@ -55,7 +55,7 @@ function ContactUs() {
 						<div>
 							<Form.Group controlId="formGroupSubject">
 								<Form.Label>Subject</Form.Label>
-								<div className="border border-warning">
+								<div className="border border-warning rounded-3">
 									<Form.Control
 										type="text"
 										name="subject"
@@ -71,7 +71,7 @@ function ContactUs() {
 						<div>
 							<Form.Group controlId="formGroupEmail">
 								<Form.Label>Email address</Form.Label>
-								<div className="border border-warning">
+								<div className="border border-warning rounded-3">
 									<Form.Control
 										type="email"
 										name="email"
@@ -95,7 +95,7 @@ function ContactUs() {
 						<div>
 							<Form.Group controlId="formGroupNumber">
 								<Form.Label>Phone Number</Form.Label>
-								<div className="border border-warning">
+								<div className="border border-warning rounded-3">
 									<Form.Control
 										type="number"
 										name="Phone"
@@ -111,9 +111,9 @@ function ContactUs() {
 						<div>
 							<Form.Group controlId="formGroupMessage">
 								<Form.Label>Message</Form.Label>
-								<div className="border border-warning">
+								<div className="border border-warning rounded-3 ">
 									<Form.Control
-										className=""
+										className=" "
 										name="message"
 										size="lg"
 										type="text"

@@ -5,20 +5,26 @@ import "../style/projects.css";
 
 function Projects() {
 	const [projects, setProjects] = useState([]);
-	useEffect(() => {
-		// THIS WILL RUN ONLY AFTER YOUR 1ST RENDER
-		axios.get(`/projectsApi/projects`).then((result) => {
-			console.log(result);
-			setProjects(result.data); // HERE YOU SET projects AND IT WILL TRIGGER A NEW RENDER
-		});
-	}, []); // BECAUSE YOU'VE SET IT WITH '[]'
 
-	useEffect(() => {
-		// THIS WILL RUN WHEN THERE'S A CHANGE IN 'projects'
-		if (projects.length) {
-			// YOU CAN USE IT TO SET SOME OTHER STATE
-		}
-	}, [projects]);
+	// const fetchData = async () => {
+	// 	await axios.get(`/projectsApi/projects`).then((result) => {
+	// 		// HERE YOU SET projects AND IT WILL TRIGGER A NEW RENDER
+	// 		console.log(projects);
+	// 		return result;
+	// 	});
+	// };
+	// useEffect(() => {
+	// 	// THIS WILL RUN ONLY AFTER YOUR 1ST RENDER
+	// 	fetchData();
+	// }, [fetchData]); // BECAUSE YOU'VE SET IT WITH '[]'
+
+	// useEffect(() => {
+	// 	// THIS WILL RUN WHEN THERE'S A CHANGE IN 'projects'
+	// 	if (projects.length) {
+	// 		// YOU CAN USE IT TO SET SOME OTHER STATE
+	// 		setProjects(fetchData());
+	// 	}
+	// }, [projects]);
 	// useEffect(() => {
 	// 	async function fetchData() {
 	// 		try {

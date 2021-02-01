@@ -31,6 +31,7 @@ exports.new = function (req, res) {
 			});
 		} else {
 			var contact = new ContactUs();
+			contact.name = req.body.name;
 			contact.email = req.body.email;
 			contact.subject = req.body.subject;
 			contact.message = req.body.message;
@@ -64,6 +65,7 @@ exports.update = function (req, res) {
 	console.log(req.body);
 	ContactUs.findById(req.params.contact_id, function (err, contact) {
 		if (err) res.send(err);
+		contact.name = req.body.name;
 		contact.email = req.body.email;
 		contact.subject = req.body.subject;
 		contact.message = req.body.message;

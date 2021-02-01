@@ -2,6 +2,10 @@ var mongoose = require("mongoose");
 
 // Setup schema
 var contactUsSchema = mongoose.Schema({
+	name: {
+		type: String,
+		required: true,
+	},
 	email: {
 		type: String,
 		required: true,

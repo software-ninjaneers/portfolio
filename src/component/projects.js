@@ -105,8 +105,8 @@ function Projects() {
 			</div>
 		</div>
 	) : (
-		<div className="backgroundImg2">
-			<h1> No projects</h1>
+		<div className="backgroundImg2 text-center font-weight-bold text-warning">
+			<h2> No projects to render yet</h2>
 		</div>
 	);
 }

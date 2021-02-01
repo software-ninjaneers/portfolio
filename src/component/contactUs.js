@@ -13,26 +13,11 @@ const override = css`
 `;
 
 function ContactUs() {
-	const { register, handleSubmit, errors } = useForm();
-
-	// useEffect(() => {
-	// 	// POST request using axios inside useEffect React hook
-	// 	const formData = register;
-	// 	axios
-	// 		.post("contactUsApi/contactUs", formData)
-	// 		.then((response) => console.log(response))
-	// 		.catch((error) => {
-	// 			// this.setState({ errorMessage: error.message });
-	// 			console.error("There was an error!", error);
-	// 		});
-
-	// 	// empty dependency array means this effect will only run once (like componentDidMount in classes)
-	// }, []);
+	const { register, handleSubmit, errors, reset } = useForm();
 
 	function sendData(data) {
 		console.log(data);
 		// You can await here
-		// const response = axios.post("/contactUsApi/contactUs/", register);
 		axios
 			.post("/contactUsApi/contactUs", data)
 			.then(function (response) {
@@ -41,6 +26,7 @@ function ContactUs() {
 			.catch(function (error) {
 				console.log(error);
 			});
+		reset({});
 	}
 
 	const onSubmit = (data) => {

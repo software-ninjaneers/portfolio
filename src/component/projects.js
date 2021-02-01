@@ -43,7 +43,7 @@ function Projects() {
 		});
 		return string;
 	};
-	return projects && projects.length > 0 ? (
+	return projects.length > 0 ? (
 		<div className="backgroundImg2">
 			<div className="card-group">
 				{projects.map((element, i) => {

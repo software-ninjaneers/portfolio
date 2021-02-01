@@ -15,7 +15,7 @@ function Projects() {
 			setProjects(response.data.data);
 		}
 		fetchData();
-	}, []); // Or [] if effect doesn't need props or state
+	}); // Or [] if effect doesn't need props or state
 
 	const iterate = (array) => {
 		var string = "";
@@ -24,7 +24,7 @@ function Projects() {
 		});
 		return string;
 	};
-	return projects.length > 0 ? (
+	return projects && projects.length > 0 ? (
 		<div className="backgroundImg2">
 			<div className="card-group">
 				{projects.map((element, i) => {

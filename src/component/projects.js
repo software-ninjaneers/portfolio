@@ -4,18 +4,29 @@ import { Accordion, Card } from "react-bootstrap";
 import "../style/projects.css";
 
 function Projects() {
-	const [projects, setProjects] = useState({ data: [] });
+	const [projects, setProjects] = useState([]);
+	useEffect(async () => {
+		try {
+			let response = await axios.get(`/projectsApi/projects`);
+			let data = await response.data.data;
+			// let newState = data.map((e) => e); // map your state here
+			setProjects(data); // and then update the state
+			console.log(data);
+		} catch (error) {
+			console.error(error.message);
+		}
+	}, []);
 
-	useEffect(() => {
-		axios
-			.get(`/projectsApi/projects`)
-			.then((response) => {
-				// console.log(response);
-				if (response) setProjects(response.data.data);
-				console.log(projects);
-			})
-			.catch((err) => console.log(err));
-	});
+	// useEffect(() => {
+	// 	axios
+	// 		.get(`/projectsApi/projects`)
+	// 		.then((response) => {
+	// 			// console.log(response);
+	// 			if (response) setProjects(response.data.data);
+	// 			console.log(projects);
+	// 		})
+	// 		.catch((err) => console.log(err));
+	// });
 
 	// useEffect(() => {
 	// 	axios

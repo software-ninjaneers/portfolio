@@ -5,18 +5,40 @@ import "../style/projects.css";
 
 function Projects() {
 	const [projects, setProjects] = useState([]);
-	useEffect(async () => {
-		try {
-			let response = await axios.get(`/projectsApi/projects`);
-			let data = await response.data.data;
-			// let newState = data.map((e) => e); // map your state here
-			setProjects(data); // and then update the state
-			console.log(data);
-		} catch (error) {
-			console.error(error.message);
-		}
-	}, []);
+	useEffect(() => {
+		// THIS WILL RUN ONLY AFTER YOUR 1ST RENDER
+		axios.get(`/projectsApi/projects`).then((result) => {
+			console.log(result);
+			setProjects(result.data); // HERE YOU SET projects AND IT WILL TRIGGER A NEW RENDER
+		});
+	}, []); // BECAUSE YOU'VE SET IT WITH '[]'
 
+	useEffect(() => {
+		// THIS WILL RUN WHEN THERE'S A CHANGE IN 'projects'
+		if (projects.length) {
+			// YOU CAN USE IT TO SET SOME OTHER STATE
+		}
+	}, [projects]);
+	// useEffect(() => {
+	// 	async function fetchData() {
+	// 		try {
+	// 			let response = await axios.get(`/projectsApi/projects`);
+	// 			let data = response.data.data;
+	// 			// let newState = data.map((e) => e); // map your state here
+	// 			setProjects(data); // and then update the state
+	// 			console.log(projects);
+	// 		} catch (error) {
+	// 			console.error(error.message);
+	// 		}
+	// 	}
+	// }, []);
+	// useEffect(() => {
+	// 	// THIS WILL RUN WHEN THERE'S A CHANGE IN 'projects'
+	// 	if (projects.length) {
+	// 		console.log(this);
+	// 		// setSomeOtherState(); // YOU CAN USE IT TO SET SOME OTHER STATE
+	// 	}
+	// }, [projects]);
 	// useEffect(() => {
 	// 	axios
 	// 		.get(`/projectsApi/projects`)

@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { css } from "@emotion/core";
 import "../style/contactUs.css";
-
-const override = css`
-	display: block;
-	margin: 0 auto;
-	border-color: red;
-`;
 
 function ContactUs() {
 	const { register, handleSubmit, errors, reset } = useForm();

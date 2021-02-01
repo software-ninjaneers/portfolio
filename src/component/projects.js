@@ -9,11 +9,21 @@ function Projects() {
 	useEffect(() => {
 		axios
 			.get("/projectsApi/projects")
-			.then((response) => setProjects(response.data.data))
-			.catch((err) => {
-				if (err) throw err;
-			});
+			.then((response) => {
+				console.log(response);
+				setProjects(response);
+			})
+			.catch((err) => console.log(err));
 	}, []);
+
+	// useEffect(() => {
+	// 	axios
+	// 		.get("/projectsApi/projects")
+	// 		.then((response) => setProjects(response.data.data))
+	// 		.catch((err) => {
+	// 			if (err) throw err;
+	// 		});
+	// }, []);
 
 	// useEffect(() => {
 	// 	async function fetchData() {

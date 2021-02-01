@@ -20,7 +20,7 @@ let contactApis = require("./api-routes/contactUs.route");
 let letterMe = require("./api-routes/letterMe.route");
 
 // Use Api routes in the App
-app.use("/projectsApi", projectApis);
+app.use(`/projectsApi`, projectApis);
 app.use("/contactUsApi", contactApis);
 app.use("/letterMeApi", letterMe);
 

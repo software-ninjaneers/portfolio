@@ -8,7 +8,7 @@ function Projects() {
 
 	useEffect(() => {
 		axios
-			.get("/projectsApi/projects")
+			.get(`/projectsApi/projects`)
 			.then((response) => {
 				// console.log(response);
 				if (response) setProjects(response.data.data);

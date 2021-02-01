@@ -11,7 +11,7 @@ function Projects() {
 			.get("/projectsApi/projects")
 			.then((response) => {
 				// console.log(response);
-				setProjects(response.data.data);
+				if (response) setProjects(response.data.data);
 				console.log(projects);
 			})
 			.catch((err) => console.log(err));

@@ -7,15 +7,24 @@ function Projects() {
 	const [projects, setProjects] = useState({ data: [] });
 
 	useEffect(() => {
-		async function fetchData() {
-			// You can await here
-			const response = await axios.get("/projectsApi/projects");
-			console.log(response.data.data);
-			// ...
-			setProjects(response.data.data);
-		}
-		fetchData();
-	}); // Or [] if effect doesn't need props or state
+		axios
+			.get("/projectsApi/projects")
+			.then((response) => setProjects(response.data.data))
+			.catch((err) => {
+				if (err) throw err;
+			});
+	}, []);
+
+	// useEffect(() => {
+	// 	async function fetchData() {
+	// 		// You can await here
+	// 		const response = await axios.get("/projectsApi/projects").then;
+	// 		console.log(response.data.data);
+	// 		// ...
+	// 		setProjects(response.data.data);
+	// 	}
+	// 	fetchData();
+	// }); // Or [] if effect doesn't need props or state
 
 	const iterate = (array) => {
 		var string = "";

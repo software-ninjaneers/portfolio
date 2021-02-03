@@ -5,8 +5,7 @@ var DB = mongoose.connection;
 // Connect to Mongoose and set connection variable
 
 mongoose.connect(
-	`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@seif-miehiar-portfolio.cizm7.mongodb.net/${process.env.MONGODB}?retryWrites=true&w=majority`,
-	// `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@seif-miehiar-portfolio.cizm7.mongodb.net/${process.env.MONGODB}`,
+	process.env.DB_URL,
 	{ useNewUrlParser: true, useUnifiedTopology: true },
 	(err) => {
 		if (!err) {

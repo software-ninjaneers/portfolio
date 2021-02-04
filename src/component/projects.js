@@ -66,9 +66,9 @@ function Projects() {
 	// }, []);
 
 	useEffect(() => {
-		async function fetchData() {
+		function fetchData() {
 			// You can await here
-			const response = await axios.get("/projectsApi/projects").then;
+			const response = axios.get("/projectsApi/projects").then;
 			console.log(response.data.data);
 			// ...
 			setProjects(response.data.data);

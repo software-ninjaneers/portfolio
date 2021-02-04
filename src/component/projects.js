@@ -65,16 +65,16 @@ function Projects() {
 	// 		});
 	// }, []);
 
-	// useEffect(() => {
-	// 	async function fetchData() {
-	// 		// You can await here
-	// 		const response = await axios.get("/projectsApi/projects").then;
-	// 		console.log(response.data.data);
-	// 		// ...
-	// 		setProjects(response.data.data);
-	// 	}
-	// 	fetchData();
-	// }); // Or [] if effect doesn't need props or state
+	useEffect(() => {
+		async function fetchData() {
+			// You can await here
+			const response = await axios.get("/projectsApi/projects").then;
+			console.log(response.data.data);
+			// ...
+			setProjects(response.data.data);
+		}
+		fetchData();
+	}, [projects]); // Or [] if effect doesn't need props or state
 
 	const iterate = (array) => {
 		var string = "";

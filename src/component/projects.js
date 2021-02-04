@@ -68,10 +68,11 @@ function Projects() {
 	useEffect(() => {
 		function fetchData() {
 			// You can await here
-			const response = axios.get("/projectsApi/projects").then;
-			console.log(response.data.data);
-			// ...
-			setProjects(response.data.data);
+			axios.get("/projectsApi/projects").then((response) => {
+				console.log(response.data.data);
+				// ...
+				setProjects(response.data.data);
+			});
 		}
 		fetchData();
 	}, [projects]); // Or [] if effect doesn't need props or state

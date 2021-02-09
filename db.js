@@ -1,11 +1,11 @@
 // Import Mongoose
 const mongoose = require("mongoose");
-
+require("dotenv").config();
 var DB = mongoose.connection;
 // Connect to Mongoose and set connection variable
 
 mongoose.connect(
-	"mongodb://localhost:27017/testingDB",
+	process.env.DB_URL,
 	{ useNewUrlParser: true, useUnifiedTopology: true },
 	(err) => {
 		if (!err) {

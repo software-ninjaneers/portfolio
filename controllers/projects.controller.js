@@ -4,17 +4,18 @@ Project = require("../models/projects.model");
 // Handle index actions
 exports.index = function (req, res) {
 	Project.get(function (err, projects) {
-		if (err) {
+		if (!err) {
+			res.json({
+				status: "success",
+				message: "projects retrieved successfully",
+				data: projects,
+			});
+		} else {
 			res.json({
 				status: "error",
 				message: err,
 			});
 		}
-		res.json({
-			status: "success",
-			message: "projects retrieved successfully",
-			data: projects,
-		});
 	});
 };
 
@@ -37,6 +38,7 @@ exports.new = function (req, res) {
 			project.time = req.body.time;
 			project.challenges = req.body.challenges;
 			project.numberOfTeamMember = req.body.numberOfTeamMember;
+			project.urlLink = req.body.urlLink;
 			// save the project and check for errors
 			project.save(function (err) {
 				if (err) res.json(err);

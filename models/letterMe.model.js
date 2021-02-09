@@ -1,8 +1,12 @@
 var mongoose = require("mongoose");
 
 // Setup schema
-var contactUsSchema = mongoose.Schema({
+var letterMeSchema = mongoose.Schema({
 	name: {
+		type: String,
+		required: true,
+	},
+	orgName: {
 		type: String,
 		required: true,
 	},
@@ -10,16 +14,12 @@ var contactUsSchema = mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	subject: {
-		type: String,
-		required: true,
-	},
-	message: {
-		type: String,
-		required: true,
-	},
 	phoneNumber: {
 		type: Number,
+		required: true,
+	},
+	feedback: {
+		type: String,
 		required: true,
 	},
 	create_date: {
@@ -28,7 +28,7 @@ var contactUsSchema = mongoose.Schema({
 	},
 });
 // Export Project model
-var ContactUs = (module.exports = mongoose.model("contactUs", contactUsSchema));
+var letterMe = (module.exports = mongoose.model("letterMe", letterMeSchema));
 module.exports.get = function (callback, limit) {
-	ContactUs.find(callback).limit(limit);
+	letterMe.find(callback).limit(limit);
 };

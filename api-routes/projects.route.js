@@ -14,7 +14,7 @@ var projectController = require("../controllers/projects.controller");
 
 // Contact routes
 projectApis
-	.route("/projects")
+	.route(`/projects`)
 	.get(projectController.index)
 	.post(projectController.new);
 projectApis

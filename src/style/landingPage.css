@@ -1,0 +1,12 @@
+.backgroundImg {
+	/* display: grid;
+	place-items: center;
+	height: 100vh;
+  width: 100vw; */
+
+	background-image: url("https://res.cloudinary.com/springboard-images/image/upload/q_auto,f_auto,fl_lossy/wordpress/2019/07/sb-blog-programming.png");
+	height: 100vh; /* You must set a specified height */
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: cover; /* Resize the background image to cover the entire container */
+}

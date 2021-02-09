@@ -8,7 +8,7 @@
 	min-height: 100%;
 	background: url("https://i.pinimg.com/originals/7e/71/d6/7e71d613cb2c4b8bf8c3a28ffb31a8f0.jpg")
 		no-repeat center center fixed;
-	/* height: 100vh;You must set a specified height */
+
 	/* background-position: center;Center the image */
 	/* background-repeat: no-repeat;Do not repeat the image */
 	background-size: cover; /* Resize the background image to cover the entire container */

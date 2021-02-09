@@ -34,6 +34,10 @@ var projectSchema = mongoose.Schema({
 		type: Number,
 		required: true,
 	},
+	urlLink: {
+		type: String,
+		required: true,
+	},
 	create_date: {
 		type: Date,
 		default: Date.now,

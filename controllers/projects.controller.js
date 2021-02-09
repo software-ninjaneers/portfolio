@@ -38,6 +38,7 @@ exports.new = function (req, res) {
 			project.time = req.body.time;
 			project.challenges = req.body.challenges;
 			project.numberOfTeamMember = req.body.numberOfTeamMember;
+			project.urlLink = req.body.urlLink;
 			// save the project and check for errors
 			project.save(function (err) {
 				if (err) res.json(err);

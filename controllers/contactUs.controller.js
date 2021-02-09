@@ -21,7 +21,7 @@ exports.index = function (req, res) {
 
 // Handle create contact actions
 exports.new = function (req, res) {
-	console.log(req.body);
+	// console.log(req.body);
 	// if (!req.body.name) {
 	// 	return res.status(400).json({
 	// 		status: "error",
@@ -29,11 +29,15 @@ exports.new = function (req, res) {
 	// 	});
 	// }
 	ContactUs.findOne({ email: req.body.email }, (err, email) => {
-		console.log("email", email);
+		console.log("emaillllllllllllllllllllllll", email);
 		if (email) {
+			email.name = req.body.name;
+			email.subject = req.body.subject;
+			email.message = req.body.message;
+			email.phoneNumber = req.body.phoneNumber;
 			sendEmail(email);
 			res.json({
-				status: "email already exists",
+				status: "email already exists but updated",
 				message: err,
 			});
 		} else {
@@ -69,7 +73,7 @@ exports.view = function (req, res) {
 
 // Handle update contact info
 exports.update = function (req, res) {
-	console.log(req.body);
+	// console.log(req.body);
 	ContactUs.findById(req.params.contact_id, function (err, contact) {
 		if (err) res.send(err);
 		contact.name = req.body.name;

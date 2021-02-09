@@ -155,7 +155,14 @@ const template = (contactObject) => {
           </td>
         </tr>
         <tr>
-          <td background="https://www.filepicker.io/api/file/zLBr1W6UT6qZP4jI2yRz" bgcolor="#64594b" valign="top" style="background: url(https://www.filepicker.io/api/file/zLBr1W6UT6qZP4jI2yRz) no-repeat center; background-color: #64594b; background-position: center;">
+          <td background="https://wallpaperaccess.com/full/1947431.jpg"
+          bgcolor="#64594b"
+          valign="top" 
+          style="background: url(https://wallpaperaccess.com/full/1947431.jpg)
+          no-repeat center;
+          background-color: #64594b; 
+          background-size: cover; 
+        ">
             <!--[if gte mso 9]>
             <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;height:303px;">
               <v:fill type="tile" src="https://www.filepicker.io/api/file/ewEXNrLlTneFGtlB5ryy" color="#64594b" />
@@ -193,13 +200,13 @@ const template = (contactObject) => {
                         <br>
                           Hi ${contactObject.name} <br><br>
 
-                          this is your message to me<br><br>
-                          "${contactObject.message}" 
+                          Your message is well received as follows:<br>
+                          "${contactObject.message}"<br><br> 
 													
-													I will contact you as soon as possible.<br>
+													I will contact you as soon as possible on the follow number +${contactObject.phoneNumber} or your email ${contactObject.email}.<br><br>
 
 													Thanks you!
-													<br>
+                          <br>
 													<b>
 													Seif Miehiar
 													</b>
@@ -222,7 +229,7 @@ const template = (contactObject) => {
         
             <center>
               
-                        <div style="text-align:center;">
+                        <div style="text-align:center; text-decoration: "none"">
                         <a href="https://github.com/Seif-Miehiar/">
                         <img src="https://img.icons8.com/fluent/96/000000/github.png"/>
                         </a>
